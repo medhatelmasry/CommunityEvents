@@ -12,6 +12,7 @@ using Microsoft.Extensions.Logging;
 using SkyWeb.Data;
 using SkyWeb.Models;
 using SkyWeb.Services;
+using SkyWeb.Models.Custom;
 
 namespace SkyWeb
 {
@@ -39,12 +40,17 @@ namespace SkyWeb
         // This method gets called by the runtime. Use this method to add services to the container.
         public void ConfigureServices(IServiceCollection services)
         {
+            string connStr = Configuration.GetConnectionString("DefaultConnection");
             // Add framework services.
+            services.AddDbContext<SkyContext>(options =>
+                options.UseSqlServer(connStr));
+
             services.AddDbContext<ApplicationDbContext>(options =>
-                options.UseSqlServer(Configuration.GetConnectionString("DefaultConnection")));
+                options.UseSqlServer(connStr));
 
             services.AddIdentity<ApplicationUser, IdentityRole>()
                 .AddEntityFrameworkStores<ApplicationDbContext>()
+                .AddEntityFrameworkStores<SkyContext>()
                 .AddDefaultTokenProviders();
 
             services.AddMvc();
@@ -55,7 +61,11 @@ namespace SkyWeb
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
-        public void Configure(IApplicationBuilder app, IHostingEnvironment env, ILoggerFactory loggerFactory)
+        public void Configure(IApplicationBuilder app, 
+            IHostingEnvironment env, 
+            ILoggerFactory loggerFactory,
+            SkyContext skyContext
+        )
         {
             loggerFactory.AddConsole(Configuration.GetSection("Logging"));
             loggerFactory.AddDebug();
@@ -83,6 +93,8 @@ namespace SkyWeb
                     name: "default",
                     template: "{controller=Home}/{action=Index}/{id?}");
             });
+
+            SeedData.Initialize(skyContext);
         }
     }
 }

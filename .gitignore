@@ -1,3 +1,6 @@
 SkyWeb/.vs/config
 SkyWeb/.vs/SkyWeb
 SkyWeb/src/SkyWeb/node_modules
+SkyWeb/src/SkyWeb/bin
+SkyWeb/src/SkyWeb/obj
+SkyWeb/src/SkyWeb/SkyWeb.xproj.user

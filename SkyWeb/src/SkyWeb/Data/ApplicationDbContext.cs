@@ -5,6 +5,7 @@ using System.Threading.Tasks;
 using Microsoft.AspNetCore.Identity.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore;
 using SkyWeb.Models;
+using SkyWeb.Models.Custom;
 
 namespace SkyWeb.Data
 {
@@ -22,5 +23,9 @@ namespace SkyWeb.Data
             // For example, you can rename the ASP.NET Identity table names and more.
             // Add your customizations after calling base.OnModelCreating(builder);
         }
+
+        public DbSet<Category> Category { get; set; }
+
+        public DbSet<Activity> Activity { get; set; }
     }
 }
