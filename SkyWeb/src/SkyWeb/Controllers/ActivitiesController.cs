@@ -45,7 +45,8 @@ namespace SkyWeb.Controllers
         // GET: Activities/Create
         public IActionResult Create()
         {
-            ViewData["CategoryId"] = new SelectList(_context.Categories, "CategoryId", "Category");
+            SelectList items = new SelectList(_context.Categories, "CategoryId", "Name");
+            ViewData["CategoryId"] = items;
             return View();
         }
 
@@ -54,15 +55,16 @@ namespace SkyWeb.Controllers
         // more details see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Create([Bind("ActivityId,CategoryId,Created,End,Start,Username")] Activity activity)
+        public async Task<IActionResult> Create([Bind("ActivityId,CategoryId,End,Start,Username")] Activity activity)
         {
             if (ModelState.IsValid)
             {
+                activity.Created = DateTime.Now;
                 _context.Add(activity);
                 await _context.SaveChangesAsync();
                 return RedirectToAction("Index");
             }
-            ViewData["CategoryId"] = new SelectList(_context.Categories, "CategoryId", "Category", activity.CategoryId);
+            ViewData["CategoryId"] = new SelectList(_context.Categories, "CategoryId", "Name", activity.CategoryId);
             return View(activity);
         }
 
@@ -79,7 +81,7 @@ namespace SkyWeb.Controllers
             {
                 return NotFound();
             }
-            ViewData["CategoryId"] = new SelectList(_context.Categories, "CategoryId", "Category", activity.CategoryId);
+            ViewData["CategoryId"] = new SelectList(_context.Categories, "CategoryId", "Name", activity.CategoryId);
             return View(activity);
         }
 
@@ -115,7 +117,7 @@ namespace SkyWeb.Controllers
                 }
                 return RedirectToAction("Index");
             }
-            ViewData["CategoryId"] = new SelectList(_context.Categories, "CategoryId", "Category", activity.CategoryId);
+            ViewData["CategoryId"] = new SelectList(_context.Categories, "CategoryId", "Name", activity.CategoryId);
             return View(activity);
         }
 

@@ -8,7 +8,7 @@ using SkyWeb.Models.Custom;
 namespace SkyWeb.Migrations
 {
     [DbContext(typeof(SkyContext))]
-    [Migration("20160615203333_FirstMigration")]
+    [Migration("20160616183604_FirstMigration")]
     partial class FirstMigration
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
@@ -27,6 +27,14 @@ namespace SkyWeb.Migrations
                     b.Property<DateTime>("Created");
 
                     b.Property<DateTime>("End");
+
+                    b.Property<bool>("IsNotes1Title");
+
+                    b.Property<bool>("IsNotes2Title");
+
+                    b.Property<string>("Notes1");
+
+                    b.Property<string>("Notes2");
 
                     b.Property<DateTime>("Start");
 

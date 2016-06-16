@@ -33,6 +33,10 @@ namespace SkyWeb.Migrations
                     CategoryId = table.Column<int>(nullable: false),
                     Created = table.Column<DateTime>(nullable: false),
                     End = table.Column<DateTime>(nullable: false),
+                    IsNotes1Title = table.Column<bool>(nullable: false),
+                    IsNotes2Title = table.Column<bool>(nullable: false),
+                    Notes1 = table.Column<string>(nullable: true),
+                    Notes2 = table.Column<string>(nullable: true),
                     Start = table.Column<DateTime>(nullable: false),
                     Username = table.Column<string>(nullable: true)
                 },

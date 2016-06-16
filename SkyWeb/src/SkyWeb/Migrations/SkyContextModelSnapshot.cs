@@ -27,6 +27,14 @@ namespace SkyWeb.Migrations
 
                     b.Property<DateTime>("End");
 
+                    b.Property<bool>("IsNotes1Title");
+
+                    b.Property<bool>("IsNotes2Title");
+
+                    b.Property<string>("Notes1");
+
+                    b.Property<string>("Notes2");
+
                     b.Property<DateTime>("Start");
 
                     b.Property<string>("Username");
