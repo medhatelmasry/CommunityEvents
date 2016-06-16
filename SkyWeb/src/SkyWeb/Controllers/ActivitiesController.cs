@@ -6,9 +6,11 @@ using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.Rendering;
 using Microsoft.EntityFrameworkCore;
 using SkyWeb.Models.Custom;
+using Microsoft.AspNetCore.Authorization;
 
 namespace SkyWeb.Controllers
 {
+    [Authorize]
     public class ActivitiesController : Controller
     {
         private readonly SkyContext _context;
@@ -33,7 +35,7 @@ namespace SkyWeb.Controllers
                 return NotFound();
             }
 
-            var activity = await _context.Activities.SingleOrDefaultAsync(m => m.ActivityId == id);
+            var activity = await _context.Activities.Include(a => a.Category).SingleOrDefaultAsync(m => m.ActivityId == id);
             if (activity == null)
             {
                 return NotFound();
@@ -45,7 +47,7 @@ namespace SkyWeb.Controllers
         // GET: Activities/Create
         public IActionResult Create()
         {
-            ViewData["CategoryId"] = new SelectList(_context.Categories, "CategoryId", "Category");
+            ViewData["CategoryId"] = new SelectList(_context.Categories, "CategoryId", "Name");
             return View();
         }
 
@@ -54,15 +56,17 @@ namespace SkyWeb.Controllers
         // more details see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Create([Bind("ActivityId,CategoryId,Created,End,IsNotes1Title,IsNotes2Title,Notes1,Notes2,Start,Username")] Activity activity)
+        public async Task<IActionResult> Create([Bind("ActivityId,CategoryId,End,IsNotes1Title,IsNotes2Title,Notes1,Notes2,Start")] Activity activity)
         {
             if (ModelState.IsValid)
             {
+                activity.Created = DateTime.Now;
+                activity.Username = User.Identity.Name;
                 _context.Add(activity);
                 await _context.SaveChangesAsync();
                 return RedirectToAction("Index");
             }
-            ViewData["CategoryId"] = new SelectList(_context.Categories, "CategoryId", "Category", activity.CategoryId);
+            ViewData["CategoryId"] = new SelectList(_context.Categories, "CategoryId", "Name", activity.CategoryId);
             return View(activity);
         }
 
@@ -79,7 +83,7 @@ namespace SkyWeb.Controllers
             {
                 return NotFound();
             }
-            ViewData["CategoryId"] = new SelectList(_context.Categories, "CategoryId", "Category", activity.CategoryId);
+            ViewData["CategoryId"] = new SelectList(_context.Categories, "CategoryId", "Name", activity.CategoryId);
             return View(activity);
         }
 

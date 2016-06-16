@@ -11,19 +11,14 @@
         <h4>Activity</h4>
         <hr />
         <div asp-validation-summary="ModelOnly" class="text-danger"></div>
-    <input type="hidden" asp-for="ActivityId" />
+        <input type="hidden" asp-for="ActivityId" />
+        <input type="hidden" asp-for="Created" />
+        <input type="hidden" asp-for="Username" />
         <div class="form-group">
-            <label asp-for="CategoryId" class="control-label col-md-2"></label>
+            <label asp-for="Start" class="col-md-2 control-label"></label>
             <div class="col-md-10">
-                <select asp-for="CategoryId" class="form-control" asp-items="ViewBag.CategoryId"></select>
-                <span asp-validation-for="CategoryId" class="text-danger" />
-            </div>
-        </div>
-        <div class="form-group">
-            <label asp-for="Created" class="col-md-2 control-label"></label>
-            <div class="col-md-10">
-                <input asp-for="Created" class="form-control" />
-                <span asp-validation-for="Created" class="text-danger" />
+                <input asp-for="Start" class="form-control" />
+                <span asp-validation-for="Start" class="text-danger" />
             </div>
         </div>
         <div class="form-group">
@@ -34,19 +29,10 @@
             </div>
         </div>
         <div class="form-group">
-            <div class="col-md-offset-2 col-md-10">
-                <div class="checkbox">
-                    <input asp-for="IsNotes1Title" />
-                    <label asp-for="IsNotes1Title"></label>
-                </div>
-            </div>
-        </div>
-        <div class="form-group">
-            <div class="col-md-offset-2 col-md-10">
-                <div class="checkbox">
-                    <input asp-for="IsNotes2Title" />
-                    <label asp-for="IsNotes2Title"></label>
-                </div>
+            <label asp-for="CategoryId" class="control-label col-md-2"></label>
+            <div class="col-md-10">
+                <select asp-for="CategoryId" class="form-control" asp-items="ViewBag.CategoryId"></select>
+                <span asp-validation-for="CategoryId" class="text-danger" />
             </div>
         </div>
         <div class="form-group">
@@ -64,17 +50,19 @@
             </div>
         </div>
         <div class="form-group">
-            <label asp-for="Start" class="col-md-2 control-label"></label>
-            <div class="col-md-10">
-                <input asp-for="Start" class="form-control" />
-                <span asp-validation-for="Start" class="text-danger" />
+            <div class="col-md-offset-2 col-md-10">
+                <div class="checkbox">
+                    <input asp-for="IsNotes1Title" />
+                    <label asp-for="IsNotes1Title"></label>
+                </div>
             </div>
         </div>
         <div class="form-group">
-            <label asp-for="Username" class="col-md-2 control-label"></label>
-            <div class="col-md-10">
-                <input asp-for="Username" class="form-control" />
-                <span asp-validation-for="Username" class="text-danger" />
+            <div class="col-md-offset-2 col-md-10">
+                <div class="checkbox">
+                    <input asp-for="IsNotes2Title" />
+                    <label asp-for="IsNotes2Title"></label>
+                </div>
             </div>
         </div>
         <div class="form-group">

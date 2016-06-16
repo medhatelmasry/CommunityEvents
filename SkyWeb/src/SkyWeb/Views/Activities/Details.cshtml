@@ -11,10 +11,10 @@
     <hr />
     <dl class="dl-horizontal">
         <dt>
-            @Html.DisplayNameFor(model => model.Created)
+            @Html.DisplayNameFor(model => model.Start)
         </dt>
         <dd>
-            @Html.DisplayFor(model => model.Created)
+            @Html.DisplayFor(model => model.Start)
         </dd>
         <dt>
             @Html.DisplayNameFor(model => model.End)
@@ -23,16 +23,10 @@
             @Html.DisplayFor(model => model.End)
         </dd>
         <dt>
-            @Html.DisplayNameFor(model => model.IsNotes1Title)
+            @Html.DisplayNameFor(model => model.Category.Name)
         </dt>
         <dd>
-            @Html.DisplayFor(model => model.IsNotes1Title)
-        </dd>
-        <dt>
-            @Html.DisplayNameFor(model => model.IsNotes2Title)
-        </dt>
-        <dd>
-            @Html.DisplayFor(model => model.IsNotes2Title)
+            @Html.DisplayFor(model => model.Category.Name)
         </dd>
         <dt>
             @Html.DisplayNameFor(model => model.Notes1)
@@ -47,16 +41,28 @@
             @Html.DisplayFor(model => model.Notes2)
         </dd>
         <dt>
-            @Html.DisplayNameFor(model => model.Start)
+            @Html.DisplayNameFor(model => model.IsNotes1Title)
         </dt>
         <dd>
-            @Html.DisplayFor(model => model.Start)
+            @Html.DisplayFor(model => model.IsNotes1Title)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.IsNotes2Title)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.IsNotes2Title)
         </dd>
         <dt>
             @Html.DisplayNameFor(model => model.Username)
         </dt>
         <dd>
             @Html.DisplayFor(model => model.Username)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.Created)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.Created)
         </dd>
     </dl>
 </div>
