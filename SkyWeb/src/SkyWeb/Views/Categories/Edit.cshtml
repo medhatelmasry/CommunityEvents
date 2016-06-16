@@ -11,14 +11,16 @@
         <h4>Category</h4>
         <hr />
         <div asp-validation-summary="ModelOnly" class="text-danger"></div>
-    <input type="hidden" asp-for="CategoryId" />
-        <div class="form-group">
-            <label asp-for="Created" class="col-md-2 control-label"></label>
-            <div class="col-md-10">
-                <input asp-for="Created" class="form-control" />
-                <span asp-validation-for="Created" class="text-danger" />
-            </div>
-        </div>
+        <input type="hidden" asp-for="CategoryId" />
+        <input type="hidden" asp-for="Username" />
+        <input type="hidden" asp-for="Created" />
+        @*<div class="form-group">
+                <label asp-for="Created" class="col-md-2 control-label"></label>
+                <div class="col-md-10">
+                    <input asp-for="Created" class="form-control" />
+                    <span asp-validation-for="Created" class="text-danger" />
+                </div>
+            </div>*@
         <div class="form-group">
             <label asp-for="Name" class="col-md-2 control-label"></label>
             <div class="col-md-10">
@@ -26,13 +28,13 @@
                 <span asp-validation-for="Name" class="text-danger" />
             </div>
         </div>
-        <div class="form-group">
-            <label asp-for="Username" class="col-md-2 control-label"></label>
-            <div class="col-md-10">
-                <input asp-for="Username" class="form-control" />
-                <span asp-validation-for="Username" class="text-danger" />
-            </div>
-        </div>
+        @*<div class="form-group">
+                <label asp-for="Username" class="col-md-2 control-label"></label>
+                <div class="col-md-10">
+                    <input asp-for="Username" class="form-control" />
+                    <span asp-validation-for="Username" class="text-danger" />
+                </div>
+            </div>*@
         <div class="form-group">
             <div class="col-md-offset-2 col-md-10">
                 <input type="submit" value="Save" class="btn btn-default" />

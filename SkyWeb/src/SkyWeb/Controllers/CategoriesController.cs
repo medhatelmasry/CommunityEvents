@@ -6,9 +6,11 @@ using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.Rendering;
 using Microsoft.EntityFrameworkCore;
 using SkyWeb.Models.Custom;
+using Microsoft.AspNetCore.Authorization;
 
 namespace SkyWeb.Controllers
 {
+    [Authorize]
     public class CategoriesController : Controller
     {
         private readonly SkyContext _context;
@@ -52,10 +54,12 @@ namespace SkyWeb.Controllers
         // more details see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Create([Bind("CategoryId,Created,Name,Username")] Category category)
+        public async Task<IActionResult> Create([Bind("Name")] Category category)
         {
             if (ModelState.IsValid)
             {
+                category.Created = DateTime.Now;
+                category.Username = User.Identity.Name;
                 _context.Add(category);
                 await _context.SaveChangesAsync();
                 return RedirectToAction("Index");
