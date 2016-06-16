@@ -6,6 +6,7 @@ using Microsoft.AspNetCore.Identity.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore;
 using SkyWeb.Models;
 using SkyWeb.Models.Custom;
+using DataModel.Models;
 
 namespace SkyWeb.Data
 {

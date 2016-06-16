@@ -16,7 +16,7 @@ namespace SkyWeb.Migrations
                 .HasAnnotation("ProductVersion", "1.0.0-rc2-20901")
                 .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
 
-            modelBuilder.Entity("SkyWeb.Models.Custom.Activity", b =>
+            modelBuilder.Entity("DataModel.Models.Activity", b =>
                 {
                     b.Property<int>("ActivityId")
                         .ValueGeneratedOnAdd();
@@ -46,7 +46,7 @@ namespace SkyWeb.Migrations
                     b.ToTable("Activities");
                 });
 
-            modelBuilder.Entity("SkyWeb.Models.Custom.Category", b =>
+            modelBuilder.Entity("DataModel.Models.Category", b =>
                 {
                     b.Property<int>("CategoryId")
                         .ValueGeneratedOnAdd();
@@ -62,9 +62,9 @@ namespace SkyWeb.Migrations
                     b.ToTable("Categories");
                 });
 
-            modelBuilder.Entity("SkyWeb.Models.Custom.Activity", b =>
+            modelBuilder.Entity("DataModel.Models.Activity", b =>
                 {
-                    b.HasOne("SkyWeb.Models.Custom.Category")
+                    b.HasOne("DataModel.Models.Category")
                         .WithMany()
                         .HasForeignKey("CategoryId")
                         .OnDelete(DeleteBehavior.Cascade);
