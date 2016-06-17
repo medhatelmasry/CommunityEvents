@@ -6,6 +6,18 @@ https://blogs.msdn.microsoft.com/appserviceteam/2016/05/24/azure-app-service-and
 
 https://azure.microsoft.com/en-us/documentation/articles/app-service-deploy-local-git/
 
+Deploy an ASP.NET Core web app to Azure using Visual Studio
+	https://docs.asp.net/en/latest/tutorials/publish-to-azure-webapp-using-vs.html
+
+Publishing to an Azure Web App with Continuous Deployment
+	https://docs.asp.net/en/latest/publishing/azure-continuous-deployment.html
+
+Publishing to IIS
+	https://docs.asp.net/en/latest/publishing/iis.html
+
+Publishing to IIS with Web Deploy using Visual Studio
+	https://docs.asp.net/en/latest/publishing/iis-with-msdeploy.html
+
 mzem		>>		C0ptic!!
 
 ****************************** SkyConcext ********************************

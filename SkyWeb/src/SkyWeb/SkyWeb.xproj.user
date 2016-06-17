@@ -10,5 +10,6 @@
     <WebStackScaffolding_DbContextTypeFullName>SkyWeb.Models.Custom.SkyContext</WebStackScaffolding_DbContextTypeFullName>
     <WebStackScaffolding_IsAsyncSelected>False</WebStackScaffolding_IsAsyncSelected>
     <WebStackScaffolding_IsViewGenerationSelected>True</WebStackScaffolding_IsViewGenerationSelected>
+    <NameOfLastUsedPublishProfile>SkyWeb2016 - Web Deploy</NameOfLastUsedPublishProfile>
   </PropertyGroup>
 </Project>
