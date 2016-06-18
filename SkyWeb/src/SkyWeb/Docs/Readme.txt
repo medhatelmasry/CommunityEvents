@@ -36,3 +36,6 @@ COMMANDLINE >> dotnet ef migrations add --context ApplicationDbContext FirstMigr
 POWERSHELL >> update-database -context ApplicationDbContext
 COMMANDLINE >> dotnet ef database update --context ApplicationDbContext
 
+============================ NOTE ON MIGRATIONS ON AZURE ======================================
+After deploying app to azure, make sure you run the migrations after pointing to the azure database in the connection string.
+
