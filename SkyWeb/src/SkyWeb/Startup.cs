@@ -94,7 +94,7 @@ namespace SkyWeb
                     template: "{controller=Home}/{action=Index}/{id?}");
             });
 
-            SeedData.Initialize(skyContext);
+            //SeedData.Initialize(skyContext);
         }
     }
 }
