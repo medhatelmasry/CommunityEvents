@@ -5,7 +5,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 
-namespace SkyWeb.Models.Custom
+namespace SkyWeb.Models.Context
 {
     public class SkyContext : DbContext
     {

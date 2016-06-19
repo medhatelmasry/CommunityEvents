@@ -1,10 +1,11 @@
 ﻿using DataModel.Models;
+using SkyWeb.Models.Context;
 using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 
-namespace SkyWeb.Models.Custom
+namespace SkyWeb.Models.Data
 {
     public class SeedData
     {

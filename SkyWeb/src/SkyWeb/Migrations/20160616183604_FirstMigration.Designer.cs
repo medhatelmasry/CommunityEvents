@@ -3,7 +3,7 @@ using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
 using Microsoft.EntityFrameworkCore.Migrations;
-using SkyWeb.Models.Custom;
+using SkyWeb.Models.Context;
 
 namespace SkyWeb.Migrations
 {

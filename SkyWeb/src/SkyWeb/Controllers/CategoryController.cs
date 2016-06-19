@@ -5,8 +5,8 @@ using System.Threading.Tasks;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
-using SkyWeb.Models.Custom;
 using DataModel.Models;
+using SkyWeb.Models.Context;
 
 namespace SkyWeb.Controllers
 {
