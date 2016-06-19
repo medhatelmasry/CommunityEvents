@@ -1,7 +1,12 @@
 SkyWeb/.vs/config
+# SkyWeb
 SkyWeb/.vs/SkyWeb
 SkyWeb/src/SkyWeb/node_modules
 SkyWeb/src/SkyWeb/bin
 SkyWeb/src/SkyWeb/obj
 SkyWeb/src/SkyWeb/SkyWeb.xproj.user
 SkyWeb/src/SkyWeb/Properties/PublishProfiles
+# DataModel
+SkyWeb/src/DataModel/bin
+SkyWeb/src/DataModel/obj
+SkyWeb/src/DataModel/DataModel.xproj.user

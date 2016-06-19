@@ -23,10 +23,16 @@ namespace SkyWeb.Controllers
 
         // GET: api/Activity
         [HttpGet]
-        public IEnumerable<Activity> GetActivities()
+        public IEnumerable<DataModel.Models.API.Activity> GetActivities()
         {
-            return _context.Activities;
-            //return _context.Activities.Include(a => a.Category);
+            // var activities = _context.Activities;
+            var activities = _context.Activities.Include(c => c.Category);
+            List<DataModel.Models.API.Activity> activitiesAPI = new List<DataModel.Models.API.Activity>();
+            foreach (var i in activities)
+            {
+                activitiesAPI.Add(new DataModel.Models.API.Activity(i));
+            }
+            return activitiesAPI;
         }
 
         // GET: api/Activity/5
