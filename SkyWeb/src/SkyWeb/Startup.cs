@@ -54,6 +54,10 @@ namespace SkyWeb
                 .AddEntityFrameworkStores<SkyContext>()
                 .AddDefaultTokenProviders();
 
+            // http://michalogluszka.pl/development/cors-with-asp-net-core-rc2/
+            services.AddCors(options => options.AddPolicy("AllowAll", p => p.AllowAnyOrigin()
+                                                                        .AllowAnyMethod()
+                                                                         .AllowAnyHeader()));
             services.AddMvc();
 
             // Add application services.
